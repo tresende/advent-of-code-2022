@@ -12,7 +12,7 @@ const reduceGroups = (group: number[][]) => group.map(sumArray)
 
 const sort = (input: number[]) => input.sort((a, b) => b - a)
 
-const getFirst = (input: number[]) => input[0]
+const top1 = (input: number[]) => input[0]
 
 const top3 = (input: number[]) => input.slice(0, 3)
 
@@ -21,7 +21,7 @@ compose(
   splitInput,
   reduceGroups,
   sort,
-  getFirst,
+  top1,
   console.log
 )(`${__dirname}/input.txt`)
 

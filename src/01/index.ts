@@ -1,8 +1,8 @@
-import { compose } from '../utils'
+import { compose as pipe } from '../utils'
 import * as fn from './fns'
 
 //part 1
-compose(
+pipe(
   fn.readInputFile,
   fn.splitInput,
   fn.reduceGroups,
@@ -12,7 +12,7 @@ compose(
 )(`${__dirname}/input.txt`)
 
 //part 2
-compose(
+pipe(
   fn.readInputFile,
   fn.splitInput,
   fn.reduceGroups,

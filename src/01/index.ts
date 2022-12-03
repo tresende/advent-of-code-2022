@@ -1,36 +1,23 @@
-import { readFile } from 'fs/promises'
 import { compose } from '../utils'
+import * as fn from './fns'
 
-const readInputFile = async (path: string) => (await readFile(path)).toString()
-
-const splitInput = (input: string) =>
-  input.split('\n\n').map((line) => line.split('\n'))
-
-const sumArray = (array: number[]) => array.reduce((a, b) => a + Number(b), 0)
-
-const reduceGroups = (group: number[][]) => group.map(sumArray)
-
-const sort = (input: number[]) => input.sort((a, b) => b - a)
-
-const top1 = (input: number[]) => input[0]
-
-const top3 = (input: number[]) => input.slice(0, 3)
-
+//part 1
 compose(
-  readInputFile,
-  splitInput,
-  reduceGroups,
-  sort,
-  top1,
+  fn.readInputFile,
+  fn.splitInput,
+  fn.reduceGroups,
+  fn.sort,
+  fn.top1,
   console.log
 )(`${__dirname}/input.txt`)
 
+//part 2
 compose(
-  readInputFile,
-  splitInput,
-  reduceGroups,
-  sort,
-  top3,
-  sumArray,
+  fn.readInputFile,
+  fn.splitInput,
+  fn.reduceGroups,
+  fn.sort,
+  fn.top3,
+  fn.sumArray,
   console.log
 )(`${__dirname}/input.txt`)

@@ -16,16 +16,16 @@ const getFirst = (input: number[]) => input[0]
 
 const top3 = (input: number[]) => input.slice(0, 3)
 
-const part1 = compose(
+compose(
   readInputFile,
   splitInput,
   reduceGroups,
   sort,
   getFirst,
   console.log
-)
+)(`${__dirname}/input.txt`)
 
-const part2 = compose(
+compose(
   readInputFile,
   splitInput,
   reduceGroups,
@@ -33,7 +33,4 @@ const part2 = compose(
   top3,
   sumArray,
   console.log
-)
-
-part1(`${__dirname}/input.txt`)
-part2(`${__dirname}/input.txt`)
+)(`${__dirname}/input.txt`)
